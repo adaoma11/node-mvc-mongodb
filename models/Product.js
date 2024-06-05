@@ -1,4 +1,5 @@
 const conn = require("../db/conn");
+const mongo = require("mongodb");
 
 class Product {
     constructor(name, image, price, description) {
@@ -23,6 +24,15 @@ class Product {
         const products = conn.db().collection("products").find().toArray();
 
         return products;
+    }
+
+    static async getProductById(id) {
+        const product = await conn
+            .db()
+            .collection("products")
+            .findOne({ _id: new mongo.ObjectId(String(id)) });
+
+        return product;
     }
 }
 

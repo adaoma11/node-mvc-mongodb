@@ -7,6 +7,13 @@ module.exports = class ProductController {
         res.render("products/all", { products });
     }
 
+    static async getProduct(req, res) {
+        const id = req.params.id;
+        const product = await Product.getProductById(id);
+
+        res.render("products/product", { product });
+    }
+
     static createProduct(req, res) {
         res.render("products/create");
     }
