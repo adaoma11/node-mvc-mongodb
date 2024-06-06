@@ -1,14 +1,21 @@
 <div class="product-page">
     <h1>{{product.name}}</h1>
-    <a href="/products" class="btn">Voltar</a>
+    
     <p>Preço: R$ {{product.price}}</p>
     <img src="{{product.image}}" alt="{{product.name}}">
     <p>{{product.description}}</p>
 
-    <a href="/products/edit/{{product._id}}" class="btn">Editar</a>
+    <div class="actions">
 
-    <form action="/products/remove" method="post">
-        <input type="hidden" name="id" value="{{product._id}}">
-        <input type="submit" value="Remover" class="btn">
-    </form>
+        <a href="/products" class="btn">Voltar</a>
+
+        <a href="/products/edit/{{product._id}}" class="btn">Editar</a>
+
+        <form action="/products/remove" method="post">
+            <input type="hidden" name="id" value="{{product._id}}">
+            <input type="submit" value="Remover" class="btn">
+        </form>
+
+    </div>
+
 </div>

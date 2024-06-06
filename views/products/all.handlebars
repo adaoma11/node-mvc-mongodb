@@ -4,9 +4,9 @@
 
     {{#each products}}
         <div class="product">
-            <h3>{{this.name}}</h3>
+            <h2>{{this.name}}</h2>
             <img src="{{this.image}}" alt="{{this.name}}">
-            <p>R$ {{this.price}}</p>
+            <h3>R$ {{this.price}}</h3>
             
             <div class="actions">
                 <a href="/products/{{this._id}}" class="btn">Detalhes</a>
